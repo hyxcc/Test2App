@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class StudentServiceImpl implements StudentService {
-
+    private Logger log = Logger.getLogger(StudentServiceImpl.class.getName());
     @Override
     public List<Student> find() {
         Student stu = new Student();
@@ -27,16 +28,36 @@ public class StudentServiceImpl implements StudentService {
             stu.setCreateTime(20200602L+i);
             stu.setUpdateTime(20200602L+i);
             list.add(stu);
+            log.info("查找成功,返回集合");
         }
+
         return list;
+
     }
 
     @Override
     public int insert(Student student) {
         if(student.getName() != null){
-            System.out.println(200);
+            return 200;
+
+        }
+        log.info("插入学生"+student.getName());
+        return 500;
+    }
+    @Override
+    public int put(Student student){
+        if(student.getId()>0 && student.getTarget()!=null && student.getTarget()!=""){
             return 200;
         }
-        return -1;
+        log.info("修改学生id为"+student
+        .getId()+"成功");
+        return 500 ;
+    }
+    @Override
+    public int delete(int id){
+        if(id>0){
+            return 200;
+        }
+        return 500 ;
     }
 }

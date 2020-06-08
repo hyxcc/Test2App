@@ -1,6 +1,5 @@
 package com.hyx.springmvc.entity;
 
-import java.util.List;
 
 public class Student {
     private int id;

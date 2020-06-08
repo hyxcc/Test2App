@@ -1,17 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>学生页面</title>
     <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="lib/2.2.4/jquery-2.2.4.min.js"></script>
     <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-
-<form action="/student" method="post">
+<form action="/student/from" method="post">
     <div class="form-group">
         <label >id</label>
         <input type="text" name="id" class="form-control"  >
+
     </div>
     <div class="form-group">
         <label >number</label>
@@ -44,6 +46,7 @@
     <div class="form-group">
         <label >立志</label>
         <input type="text" name="target" class="form-control">
+
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
