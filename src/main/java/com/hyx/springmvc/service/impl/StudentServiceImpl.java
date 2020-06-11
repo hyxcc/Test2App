@@ -10,7 +10,6 @@ import java.util.logging.Logger;
 
 @Service
 public class StudentServiceImpl implements StudentService {
-    private Logger log = Logger.getLogger(StudentServiceImpl.class.getName());
     @Override
     public List<Student> find() {
         Student stu = new Student();
@@ -28,7 +27,6 @@ public class StudentServiceImpl implements StudentService {
             stu.setCreateTime(20200602L+i);
             stu.setUpdateTime(20200602L+i);
             list.add(stu);
-            log.info("查找成功,返回集合");
         }
 
         return list;
@@ -41,7 +39,7 @@ public class StudentServiceImpl implements StudentService {
             return 200;
 
         }
-        log.info("插入学生"+student.getName());
+
         return 500;
     }
     @Override
@@ -49,8 +47,6 @@ public class StudentServiceImpl implements StudentService {
         if(student.getId()>0 && student.getTarget()!=null && student.getTarget()!=""){
             return 200;
         }
-        log.info("修改学生id为"+student
-        .getId()+"成功");
         return 500 ;
     }
     @Override

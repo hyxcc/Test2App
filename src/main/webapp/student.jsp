@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="json" uri="http://www.atg.com/taglibs/json" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <json:object name="result">
     <json:property name="code" value="${result.code}" />
     <json:property name="message" value="${result.message}" />
